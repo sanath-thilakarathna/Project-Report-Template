@@ -1,5 +1,7 @@
 # Project Report Template (LaTeX)
 
+Created for **CINEC Campus, Faculty of Engineering and Technology**.
+
 This repository is a LaTeX report template with a structured `sections/`, `figures/`, and `tables/` layout.
 
 ## Prerequisites
