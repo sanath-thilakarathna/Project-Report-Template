@@ -1,0 +1,13 @@
+% LaTeX-only sample table include
+% Use inside a table environment: \input{tables/acceptance_criteria}
+
+\begin{tabular}{@{}lll@{}}
+  \toprule
+  \textbf{Metric} & \textbf{Target} & \textbf{Test method} \\
+  \midrule
+  Output voltage & \SI{5.0}{\volt} \,$\pm$\,\SI{3}{\percent} & DMM at load \\
+  Output ripple & $<\SI{50}{\milli\volt_{pp}}$ & Oscilloscope AC-coupled \\
+  Efficiency & $\ge 85\%$ @ \SI{1}{\ampere} & Power in/out \\
+  Temperature & $<\SI{85}{\celsius}$ & Thermocouple/IR \\
+  \bottomrule
+\end{tabular}

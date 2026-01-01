@@ -1,0 +1,12 @@
+% LaTeX-only sample table include
+% Use inside a table environment: \input{tables/bom_excerpt}
+
+\begin{tabular}{@{}llll@{}}
+  \toprule
+  \textbf{RefDes} & \textbf{Value/Part} & \textbf{Package} & \textbf{Notes} \\
+  \midrule
+  U1 & Buck Regulator IC & QFN & Synchronous, \SI{500}{\kilo\hertz} \\
+  L1 & \SI{4.7}{\micro\henry} & SMD & Saturation current $>\SI{3}{\ampere}$ \\
+  COUT & 2 $\times$ \SI{22}{\micro\farad} & 1206 & Low-ESR ceramic \\
+  \bottomrule
+\end{tabular}

@@ -1,0 +1,39 @@
+\chapter{Design}
+
+\section{System Block Diagram}
+Figure~\ref{fig:block} shows a typical block-level decomposition.
+
+\begin{figure}[H]
+  \centering
+  \input{figures/block_diagram}
+  \caption{System block diagram (LaTeX-only sample)}
+  \label{fig:block}
+\end{figure}
+
+\section{Topology Selection}
+A buck converter is appropriate when stepping down a higher DC input voltage to a lower DC output voltage with high efficiency \cite{ti_buck_design}.
+
+\section{Key Design Calculations (Example)}
+For an ideal buck converter, the duty cycle is approximately:
+\begin{equation}
+  D \approx \frac{V_{out}}{V_{in}}
+\end{equation}
+
+Assuming $V_{in}=\SI{12}{\volt}$ and $V_{out}=\SI{5}{\volt}$, then:
+\begin{equation}
+  D \approx \frac{5}{12} \approx 0.417
+\end{equation}
+
+\section{Component Selection}
+Document IC selection rationale (availability, features, protection, switching frequency).
+
+\subsection{Bill of Materials (Excerpt)}
+\begin{table}[H]
+  \centering
+  \caption{BOM excerpt (example format)}
+  \label{tab:bom}
+  \input{tables/bom_excerpt}
+\end{table}
+
+\section{PCB Design Considerations}
+Include placement rules, high-current loop minimization, ground strategy, and thermal vias. Reference your layout screenshots or 3D render exports. Thermal performance and copper utilization should be justified with appropriate references when relevant \cite{ieee_thermal_pcb}.

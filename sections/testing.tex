@@ -1,0 +1,24 @@
+\chapter{Testing and Verification}
+
+\section{Test Setup}
+Describe the measurement setup, including power supply, load, oscilloscope probe method (tip-and-barrel spring), and grounding. Use vendor guidance and best practices for switching regulator measurement where applicable \cite{ti_buck_design}.
+
+\section{Test Plan}
+\begin{table}[H]
+  \centering
+  \caption{Test plan summary}
+  \label{tab:testplan}
+  \begin{tabular}{@{}llll@{}}
+    \toprule
+    \textbf{Test ID} & \textbf{Condition} & \textbf{Measurement} & \textbf{Expected} \\
+    \midrule
+    T1 & $V_{in}=\SI{12}{\volt}$, $I_{out}=\SI{0.5}{\ampere}$ & $V_{out}$ & \SI{5}{\volt} \,$\pm$\,\SI{3}{\percent} \\
+    T2 & $V_{in}=\SI{12}{\volt}$, $I_{out}=\SI{2}{\ampere}$ & Ripple & $<\SI{50}{\milli\volt_{pp}}$ \\
+    T3 & Sweep load 0--\SI{2}{\ampere} & Efficiency & $\ge 85\%$ @ \SI{1}{\ampere} \\
+    T4 & \SI{25}{\celsius} ambient & Hotspot temp & $<\SI{85}{\celsius}$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Safety and Handling}
+Include ESD precautions, current limit settings, and safe probing practices.

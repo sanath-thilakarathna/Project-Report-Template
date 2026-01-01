@@ -1,0 +1,57 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Other common LaTeX outputs
+*.dvi
+*.ps
+*.xdv
+
+# Beamer
+*.nav
+*.snm
+*.vrb
+
+# Glossaries / indexes
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.idx
+*.ilg
+*.ind
+
+# Minted
+_minted*
+*.pyg
+
+# Latexmk / TeX auxiliary
+*.bak
+*.backup
+*.tmp
+
+# PDFs (uncomment if you want to commit final PDFs)
+*.pdf
+
+# Editor/OS junk
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

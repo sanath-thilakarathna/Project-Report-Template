@@ -1,0 +1,32 @@
+\chapter{Requirements Specification}
+
+\section{Functional Requirements}
+\begin{itemize}
+  \item Convert input voltage to a regulated \SI{5}{\volt} output.
+  \item Provide load current up to \SI{2}{\ampere}.
+  \item Maintain output ripple below \SI{50}{\milli\volt_{pp}} under nominal conditions.
+\end{itemize}
+
+\section{Non-Functional Requirements}
+\begin{itemize}
+  \item Efficiency $\ge 85\%$ at \SI{1}{\ampere} load.
+  \item Thermal: keep hottest component case temperature below \SI{85}{\celsius} in still air.
+  \item PCB: 2-layer FR4, standard fabrication constraints (track/space, via sizes).
+\end{itemize}
+
+\section{Constraints and Assumptions}
+\begin{itemize}
+  \item Input supply: \SI{10}{\volt} to \SI{14}{\volt}.
+  \item Ambient temperature: \SI{25}{\celsius} (unless otherwise stated).
+  \item Measurement equipment: oscilloscope, electronic load, DMM.
+\end{itemize}
+
+\section{Acceptance Criteria}
+Table~\ref{tab:acceptance} summarizes the acceptance criteria.
+
+\begin{table}[H]
+  \centering
+  \caption{Acceptance criteria}
+  \label{tab:acceptance}
+  \input{tables/acceptance_criteria}
+\end{table}

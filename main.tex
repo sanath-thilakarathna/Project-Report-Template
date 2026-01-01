@@ -1,0 +1,145 @@
+% CINEC Campus - Electronics Design Project Report Template
+% Compile with: latexmk -pdf main.tex
+
+\documentclass[12pt,a4paper,twoside,openany]{report}
+
+% --- Encoding / language ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+% --- Page layout ---
+% Binding-friendly margins (inner > outer)
+\usepackage[a4paper,inner=1.5in,outer=1in,top=1in,bottom=1in]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+% --- Graphics / tables ---
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+
+% --- LaTeX-only figures (optional) ---
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+
+% --- Code listings (optional) ---
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+	basicstyle=\ttfamily\small,
+	breaklines=true,
+	frame=single,
+	tabsize=2
+}
+
+% --- Math / units ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\sisetup{detect-all}
+
+% --- Links ---
+\usepackage[hidelinks]{hyperref}
+
+% Recommended with biblatex + babel
+\usepackage{csquotes}
+
+% --- Lists / TOC ---
+\usepackage{tocloft}
+
+% --- Headers / footers ---
+\usepackage{fancyhdr}
+
+% --- Bibliography ---
+\usepackage[backend=biber,style=ieee]{biblatex}
+\addbibresource{references.bib}
+
+% --- Simple metadata macros (edit these) ---
+\newcommand{\CampusName}{CINEC Campus}
+\newcommand{\DepartmentName}{Department of Electrical and Electronic Engineering}
+\newcommand{\ProgramName}{BSc. in Electronics and Telecommunication Engineering}
+\newcommand{\ProjectTitle}{Design and Implementation of a \texorpdfstring{\\}{ }DC-DC Buck Converter for Embedded Systems}
+\newcommand{\ProjectSubtitle}{Electronics Design Project Report}
+\newcommand{\StudentName}{Your Name}
+\newcommand{\StudentID}{Your Student ID}
+\newcommand{\SupervisorName}{Supervisor Name}
+\newcommand{\SubmissionDate}{\today}
+
+% --- Header/footer styles ---
+% Front matter: no header (page number only)
+\fancypagestyle{frontmatter}{
+	\fancyhf{}
+	\fancyfoot[C]{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+
+% Main matter: chapter title in header, page number in footer
+\setlength{\headheight}{15pt}
+\fancypagestyle{mainmatter}{
+	\fancyhf{}
+	\fancyhead[L]{\small\nouppercase{\leftmark}}
+	\fancyfoot[C]{\thepage}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+
+\renewcommand{\chaptermark}[1]{\markboth{Chapter \thechapter: #1}{}}
+
+
+
+\begin{document}
+
+% --- Front matter ---
+\pagenumbering{roman}
+\pagestyle{frontmatter}
+\input{sections/titlepage}
+
+\input{sections/declaration}
+\input{sections/acknowledgements}
+\input{sections/abstract}
+
+\input{sections/abbreviations}
+
+\newpage
+\tableofcontents
+
+\newpage
+\listoffigures
+
+\newpage
+\listoftables
+
+\clearpage
+\pagenumbering{arabic}
+
+% From here on, use chapter header style
+\pagestyle{mainmatter}
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyfoot[C]{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+
+% --- Main content ---
+\input{sections/introduction}
+\input{sections/requirements}
+\input{sections/design}
+\input{sections/implementation}
+\input{sections/testing}
+\input{sections/results}
+\input{sections/conclusion}
+
+% --- References ---
+\clearpage
+\printbibliography
+
+% --- Appendices ---
+\appendix
+\input{sections/appendix_a}
+
+\end{document}

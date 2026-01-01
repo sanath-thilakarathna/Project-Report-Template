@@ -1,0 +1,18 @@
+% LaTeX-only sample figure (TikZ)
+% Use inside a figure environment: \input{figures/block_diagram}
+
+\begin{tikzpicture}[
+  block/.style={draw, rounded corners, align=center, minimum height=10mm, minimum width=28mm},
+  arrow/.style={-Latex, thick}
+]
+
+\node[block] (vin) {Input\\$V_{in}$\\(10--14 V)};
+\node[block, right=18mm of vin] (buck) {Buck\\Converter};
+\node[block, right=18mm of buck] (vout) {Regulated\\$V_{out}=5$ V};
+\node[block, below=12mm of buck, minimum width=40mm] (load) {Embedded Load\\MCU + Sensors};
+
+\draw[arrow] (vin) -- (buck);
+\draw[arrow] (buck) -- (vout);
+\draw[arrow] (vout) |- (load);
+
+\end{tikzpicture}
